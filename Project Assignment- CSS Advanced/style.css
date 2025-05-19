@@ -1,0 +1,158 @@
+:root {
+  --price-color: #3e8168;
+  --original-price-color: rgb(131, 127, 127);
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Fraunces", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: black;
+  background: #f4ebe3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 30.62rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.product-image {
+  height: 18rem;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+
+.category {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.4rem;
+  color: var(--original-price-color);
+  text-transform: uppercase;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  font-family: var(--font-serif);
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--original-price-color);
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-size: 3.2rem;
+  font-family: var(--font-serif);
+  color: var(--price-color);
+}
+
+.original-price {
+  font-size: 1rem;
+  color: var(--original-price-color);
+  text-decoration: line-through;
+}
+
+.add-to-cart {
+  padding: 1.2rem 1rem;
+  background: var(--price-color);
+  color: white;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 550;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.add-to-cart img {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+  filter: brightness(0) invert(1);
+}
+
+.add-to-cart:hover {
+  transform: scale(1.02);
+  background: #2a6b56;
+}
+
+/* Desktop  */
+@media (min-width: 600px) {
+  .product-card {
+    grid-template-columns: 1fr 1fr; /* Grid */
+    max-width: 50rem;
+    height: auto;
+  }
+
+  .product-image {
+    height: auto;
+  }
+
+  .product-info {
+    padding: 3rem;
+    justify-content: center;
+    gap: 3.5rem;
+  }
+
+  .title {
+    font-size: 3.3rem;
+    line-height: 1;
+  }
+
+  .description {
+    font-size: 1.4rem;
+  }
+
+  .category {
+    letter-spacing: 0.5rem;
+  }
+}
+
+/* Large Screen  */
+@media (min-width: 1200px) {
+  .product-card {
+    max-width: 56rem;
+  }
+}
